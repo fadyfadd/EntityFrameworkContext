@@ -16,14 +16,20 @@ public class SakilaDataContextTest : IDisposable
     public void ActorsDbSet()
     {
         var actors = sakilaDataContext.Actors;
-        Console.WriteLine(actors);
+        Console.WriteLine(actors.ToList());
     }
 
     [Fact]
     public void ActorFilmsDbSet()
     {
-       var actorFilms = sakilaDataContext.ActorFilms;
+       var actorFilms = sakilaDataContext.ActorFilms.ToList();
         Console.WriteLine(actorFilms);
+    }
+
+    [Fact]
+    public void FilmsDbSet() {
+        var films = sakilaDataContext.Films.ToList();
+        Console.WriteLine(films);
     }
 
     public void Dispose()

@@ -11,6 +11,8 @@ public class SakilaDataContext : DbContext
 
     public DbSet<ActorFilm> ActorFilms {set; get;}
 
+    public DbSet<Film> Films {set; get;}
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
@@ -22,6 +24,7 @@ public class SakilaDataContext : DbContext
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new ActorConfiguration());
         modelBuilder.ApplyConfiguration(new ActorFilmConfiguration());
+        modelBuilder.ApplyConfiguration(new FilmConfiguration());
     }
 
     public SakilaDataContext(String connectionString) {
