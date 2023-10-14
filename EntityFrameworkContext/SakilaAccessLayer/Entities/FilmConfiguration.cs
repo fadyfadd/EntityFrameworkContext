@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MySql.EntityFrameworkCore.Extensions;
 
 namespace EntityFrameworkContext;
 
@@ -22,5 +23,7 @@ public class FilmConfiguration : IEntityTypeConfiguration<Film>
         builder.Property(f=>f.Rating).HasColumnName("rating");
         builder.Property(f=>f.SpecialFeatures).HasColumnName("special_features");
         builder.Property(f=>f.LastUpdate).HasColumnName("last_update");
+
+        builder.HasMany(f=>f.ActorFilms).WithOne(fm=>fm.Film).HasForeignKey(fm=>new {FilmId = fm.FilmId});
     }
 }

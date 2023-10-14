@@ -15,7 +15,7 @@ public class Film
     public Int32? Length { set; get; }
     public Int32? ReplacementCost { set; get; }
     public String? Rating { set; get; }
-    //public String? SpecialRating { set; get; }
     public String? SpecialFeatures {set; get;}
     public DateTime LastUpdate { set; get; }
+    public List<ActorFilm>? ActorFilms {set; get;} = null; 
 }

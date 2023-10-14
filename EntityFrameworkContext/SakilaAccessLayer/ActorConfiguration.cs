@@ -13,5 +13,7 @@ public class ActorConfiguration : IEntityTypeConfiguration<Actor>
         builder.Property(a=>a.FirstName).HasColumnName("first_name");
         builder.Property(a=>a.LastName).HasColumnName("last_name");
         builder.Property(a=>a.LastUpdate).HasColumnName("last_update");
+
+        builder.HasMany(a=>a.ActorFilms).WithOne(fm=>fm.Actor).HasForeignKey(fm=>new {ActorId = fm.ActorId});
     }
 }

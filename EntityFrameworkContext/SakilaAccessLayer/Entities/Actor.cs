@@ -2,9 +2,10 @@
 
 public class Actor
 {
-    public Int64 ActorId {set; get;}
+    public Int32 ActorId {set; get;}
     public String? FirstName {set; get;}
     public String? LastName {set; get;}
     public DateTime LastUpdate {set; get;}
+    public List<ActorFilm>? ActorFilms {set; get;} = null; 
 
 }
