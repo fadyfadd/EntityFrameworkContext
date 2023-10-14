@@ -9,8 +9,5 @@ public class Service
     public Service(SakilaDataContext sakilaDataContext) {
         this.sakilaDataContext = sakilaDataContext; 
     }
-    public List<Actor> GetActors() {
-        var list = sakilaDataContext.Actors;
-        return list.ToList(); 
-    }
+ 
 }
