@@ -5,7 +5,7 @@ namespace EntityFrameworkContextTest;
 
 public class ApplicationTest : IDisposable
 {
-    private String sakilaConnectionString = "Server=127.0.0.1;Database=sakila;uid=root;pwd=quLRYP22;";
+    private string sakilaConnectionString = "Server=127.0.0.1;Database=sakila;uid=root;pwd=quLRYP22;";
     private SakilaDataContext sakilaDataContext;
     public ApplicationTest()
     {
@@ -21,7 +21,9 @@ public class ApplicationTest : IDisposable
     [Fact]
     public void ActorFilmsDbSet()
     {
-        var actorFilms = this.sakilaDataContext.ActorFilms.ToList();
+           var filmActors = this.sakilaDataContext.ActorFilms
+            .Include(af=>af.Actor)
+            .Include(af=>af.Film).ToList();
     }
 
     [Fact]

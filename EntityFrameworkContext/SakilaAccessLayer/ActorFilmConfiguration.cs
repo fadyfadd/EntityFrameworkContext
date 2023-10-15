@@ -12,6 +12,5 @@ public class ActorFilmConfiguration : IEntityTypeConfiguration<ActorFilm>
         builder.Property(af=>af.FilmId).HasColumnName("film_id");
         builder.Property(af=>af.ActorId).HasColumnName("actor_id");
         builder.Property(af=>af.LastUpdate).HasColumnName("last_update");
-        
     }
 }
