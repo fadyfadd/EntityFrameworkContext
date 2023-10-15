@@ -6,6 +6,6 @@ public class Actor
     public String FirstName {set; get;}
     public String LastName {set; get;}
     public DateTime LastUpdate {set; get;}
-    public List<ActorFilm> ActorFilms {set; get;} 
+    public ICollection<ActorFilm> ActorFilms {set; get;} 
 
 }

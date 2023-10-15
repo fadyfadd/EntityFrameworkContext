@@ -4,7 +4,7 @@ namespace EntityFrameworkContext;
 
 public class Film
 {
-    public Int32? FilmId { set; get; }
+    public Int32 FilmId { set; get; }
     public String Title { set; get; }
     public String Description { set; get; }
     public Int32? ReleaseYear { set; get; }
@@ -17,5 +17,5 @@ public class Film
     public String Rating { set; get; }
     public String SpecialFeatures {set; get;}
     public DateTime LastUpdate { set; get; }
-    public List<ActorFilm> ActorFilms {set; get;} = null; 
+    public ICollection<ActorFilm> ActorFilms {set; get;} = null; 
 }
